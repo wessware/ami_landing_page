@@ -1,9 +1,12 @@
-require('dotenv').config()
+const { config } = require('dotenv');
+const path = require("path");
 
 const express = require("express")
 const expressLayouts = require('express-ejs-layouts')
 
-const app= express()
+config();
+
+const app= express();
 const port = 5000 || process.env.PORT 
 
 app.use(express.urlencoded({ extended: true }))
@@ -14,11 +17,12 @@ app.use(express.static('public'))
 
 //templating engine
 app.use(expressLayouts)
-app.set("layout", './layouts/main')
-app.set('view engine', 'ejs')
+app.set("layout", './layouts/main');
+app.set('view engine', 'ejs');
+app.use("/p", express.static(path.resolve("public")));
 
 //routes
-app.use('/', require('./server/routes/index'))
+app.use('/', require('./server/routes/index'));
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`)

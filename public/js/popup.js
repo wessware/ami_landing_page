@@ -1,67 +1,49 @@
-function showWorkPopup() {
-    var popup = document.getElementById("workPopup");
-    popup.style.display = "block";
-}
+const contctBtn = document.getElementById("contctBtn");
+const workBtn = document.getElementById("workBtn");
+const serviceBtn = document.getElementById("serviceBtn");
 
-function hideWorkPopup() {
-    var popup = document.getElementById("workPopup");
-    popup.style.display = "none";
+contctBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    console.log("hello");
+});
+
+console.log("here");
+
+function showWorkPopup() {
+    let popup = document.getElementById("workPopup");
+    showOrHide(popup);
 }
 
 function showServicePopup() {
-    var popup = document.getElementById("servicePopup");
-    popup.style.display = "block";
+    let popup = document.getElementById("servicePopup");
+    showOrHide(popup);
 }
 
-function hideServicePopup() {
-    var popup = document.getElementById("servicePopup");
-    popup.style.display = "none";
-}
 function showContactPopup() {
-        var popup = document.getElementById("contactPopup");
-        popup.style.display = "block";
-}
-
-function hideContactPopup() {
-        var popup = document.getElementById("contactPopup");
-        popup.style.display = "none";
-}
-        function showTwitterPopup() {
-    var popup = document.getElementById("twitterPopup");
-    popup.style.display = "block";
-}
-
-function hideTwitterPopup() {
-    var popup = document.getElementById("twitterPopup");
-    popup.style.display = "none";
+    let popup = document.getElementById("contactPopup");
+    showOrHide(popup);
 }
 
 function showFacebookPopup() {
-    var popup = document.getElementById("facebookPopup");
-    popup.style.display = "block";
-}
-
-function hideFacebookPopup() {
-    var popup = document.getElementById("facebookPopup");
-    popup.style.display = "none";
+    let popup = document.getElementById("facebookPopup");
+    showOrHide(popup);
 }
 
 function showGithubPopup() {
-    var popup = document.getElementById("githubPopup");
-    popup.style.display = "block";
-}
-
-function hideGithubPopup() {
-    var popup = document.getElementById("githubPopup");
-    popup.style.display = "none";
+    let popup = document.getElementById("githubPopup");
+    showOrHide(popup);
 }
 
 function showPinterestPopup() {
-    var popup = document.getElementById("pinterestPopup");
-    popup.style.display = "block";
+    let popup = document.getElementById("pinterestPopup");
+    showOrHide(popup);
 }
 
-function hidePinterestPopup() {
-    var popup = document.getElementById("pinterestPopup");
-    popup.style.display = "none"; 
+function showOrHide(popup) {
+    if (popup.style.display === "none") {
+        popup.style.display = "block";
+    }
+    else {
+        popup.style.display = "none";
+    }
 }
