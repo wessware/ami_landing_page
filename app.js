@@ -7,7 +7,7 @@ const expressLayouts = require('express-ejs-layouts')
 config();
 
 const app= express();
-const port = 5000 || process.env.PORT 
+const port = 3000 || process.env.PORT 
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
